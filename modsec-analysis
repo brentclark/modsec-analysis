@@ -26,8 +26,8 @@ show_usage
 exit
 fi
 
-ERROR_LOG=/var/log/httpd/error_log
-MODSEC_AUDIT_LOG=/var/log/httpd/modsec_audit_log
+ERROR_LOG=$(find  /var/log/apache2/ -type f -name '*error*.log' -print)
+MODSEC_AUDIT_LOG="/var/log/apache2/modsecurity.log"
 SEVERITY=CRITICAL
 
 #List of internal network IP addresses in file on lines like: "client 10." for IP addresses matching 10.* 
